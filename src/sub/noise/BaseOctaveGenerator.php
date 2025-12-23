@@ -18,12 +18,11 @@ abstract class BaseOctaveGenerator{
     ){}
 
     /**
-     * Sets the scale used for all coordinates passed to this generator.
+     * Задает масштаб, используемый для всех координат, передаваемых этому генератору.
      * <p>
-     * This is the equivalent to setting each coordinate to the specified
-     * value.
+     * Это эквивалентно установке для каждой координаты указанного значения.
      *
-     * @param float $scale New value to scale each coordinate by
+     * @param float $scale Новое значение для масштабирования каждой координаты
      */
     public function setScale(float $scale) : void{
         $this->x_scale = $scale;
@@ -32,9 +31,9 @@ abstract class BaseOctaveGenerator{
     }
 
     /**
-     * Gets a clone of the individual octaves used within this generator
+     * Получает клон отдельных октав, используемых в этом генераторе
      *
-     * @return NoiseGenerator[] clone of the individual octaves
+     * @return NoiseGenerator[] клон отдельных октав
      */
     public function getOctaves() : array{
         $octaves = [];

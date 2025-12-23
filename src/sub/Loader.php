@@ -6,12 +6,14 @@ namespace sub;
 
 use pocketmine\level\generator\GeneratorManager;
 use pocketmine\plugin\PluginBase;
+use sub\biome\MinecraftBiomeStorage;
 use sub\generator\SubGenerator;
 
 class Loader extends PluginBase {
 
     public function onLoad(): void{
         GeneratorManager::addGenerator(SubGenerator::class, "sub");
+        MinecraftBiomeStorage::init();
     }
 
     public function onEnable(): void{

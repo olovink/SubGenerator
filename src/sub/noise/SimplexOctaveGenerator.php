@@ -41,16 +41,16 @@ class SimplexOctaveGenerator extends BaseOctaveGenerator{
     }
 
     /**
-     * Generates noise for the 3D coordinates using the specified number of
-     * octaves and parameters
+     * Генерирует шум для 3D-координат, используя указанное количество
+     * октав и параметров
      *
-     * @param float $x X-coordinate
-     * @param float $y Y-coordinate
-     * @param float $z Z-coordinate
-     * @param float $frequency How much to alter the frequency by each octave
-     * @param float $amplitude How much to alter the amplitude by each octave
-     * @param bool $normalized If true, normalize the value to [-1, 1]
-     * @return float resulting noise
+     * @param float $x Координата X
+     * @param float $y Координата Y
+     * @param float $z Координата Z
+     * @param float $frequency Насколько изменить частоту на каждую октаву
+     * @param float $amplitude Насколько изменить амплитуду на каждую октаву
+     * @param bool $normalized Если true, нормализует значение до [-1, 1]
+     * @return float результирующий шум
      */
     public function octaveNoise(float $x, float $y, float $z, float $frequency, float $amplitude, bool $normalized) : float{
         $result = 0.0;
