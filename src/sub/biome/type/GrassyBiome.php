@@ -7,12 +7,16 @@ namespace sub\biome\type;
 use pocketmine\block\Block;
 use pocketmine\block\BlockIds;
 use sub\biome\BaseBiome;
+use sub\populator\SmallGrass;
 
 abstract class GrassyBiome extends BaseBiome {
     protected float $baseHeight = 64.0;
     protected float $heightVariation = 8.0;
-    protected float $temperature = 0.8;
-    protected float $rainfall = 0.4;
+
+    public function __construct() {
+        parent::__construct();
+        $this->addPopulator(new SmallGrass());
+    }
 
     protected function generateGroundCover(): array{
         $grass = Block::get(BlockIds::GRASS);

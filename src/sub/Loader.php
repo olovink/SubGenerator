@@ -13,13 +13,13 @@ class Loader extends PluginBase {
 
     public function onLoad(): void{
         GeneratorManager::addGenerator(SubGenerator::class, "sub");
-        MinecraftBiomeStorage::init();
     }
 
     public function onEnable(): void{
         foreach (GeneratorManager::getGeneratorList() as $generator) {
             $this->getLogger()->info("Generator: $generator");
         }
+        MinecraftBiomeStorage::init();
     }
 
     public function onDisable(): void{}

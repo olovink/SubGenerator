@@ -10,12 +10,10 @@ use pocketmine\level\ChunkManager;
 use pocketmine\utils\Random;
 use sub\populator\Populator;
 
-abstract class BaseBiome implements IMinecraftBiome {
+abstract class BaseBiome {
     protected int $id = BiomeIds::OCEAN;
     protected float $baseHeight = 64.0;
     protected float $heightVariation = 16.0;
-    protected float $temperature = 0.5;
-    protected float $rainfall = 0.5;
 
     /** @var Populator[] */
     protected array $populators = [];
@@ -55,14 +53,6 @@ abstract class BaseBiome implements IMinecraftBiome {
 
     public function getHeightVariation(): float{
         return $this->heightVariation;
-    }
-
-    public function getTemperature(): float{
-        return $this->temperature;
-    }
-
-    public function getRainfall(): float{
-        return $this->rainfall;
     }
 
     public function addPopulator(Populator $populator): void{

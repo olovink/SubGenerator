@@ -7,10 +7,10 @@ namespace sub\populator;
 use pocketmine\block\Block;
 use pocketmine\block\BlockFactory;
 use pocketmine\block\Liquid;
-use pocketmine\level\biome\Biome;
 use pocketmine\level\ChunkManager;
 use pocketmine\level\format\Chunk;
 use pocketmine\utils\Random;
+use sub\biome\MinecraftBiomeStorage;
 
 class GroundCover implements Populator
 {
@@ -19,7 +19,7 @@ class GroundCover implements Populator
         $chunk = $level->getChunk($chunkX, $chunkZ);
         for ($x = 0; $x < Chunk::EDGE_LENGTH; ++$x) {
             for ($z = 0; $z < Chunk::EDGE_LENGTH; ++$z) {
-                $biome = Biome::getBiome($chunk->getBiomeId($x, $z));
+                $biome = MinecraftBiomeStorage::getBiome($chunk->getBiomeId($x, $z));
                 $cover = $biome->getGroundCover();
                 if (count($cover) > 0) {
                     $diffY = 0;
